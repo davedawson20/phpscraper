@@ -17,6 +17,7 @@
 	$content = $contentInput.'<br><br>RegEx:&nbsp;'.$regex.'<br>Terms:&nbsp;'.$search_terms.'<br>URL:&nbsp;'.$url.'<br>';
 
 
+	
 		
 		
 	echo "Pacific Lake <br><br>DOM Parser<br><br>";
