@@ -3,7 +3,7 @@
 	echo "Pacific Lake <br><br>";
 
     $regex = '<div class="name">([A-Z.a-z])\w+';
-    $url = "http://www.pacificlake.com/entrepreneurs";	
+    $url = 'http://www.pacificlake.com/entrepreneurs';	
 	
 	$file_string = file_get_contents($url);
 	preg_match_all("/".$regex."/", $file_string, $matches, PREG_PATTERN_ORDER);
@@ -22,6 +22,7 @@
 	echo "Pacific Lake <br><br>DOM Parser<br><br>";
 
 	$xml = $file_string;
+	$tagName = 'div class="entrepreneur-holder"';
 
 	$dom = new DOMDocument();
 	//DOMDocument throws warnings when the XML is invalid, we don't care.
@@ -30,7 +31,7 @@
 	$document = $dom->documentElement;
 
 	//Find the elements you want to remove
-	$entre = $document->getElementsByTagName("entrepreneur-holder")->item(0);
+	$entre = $document->getElementsByTagName($tagName)->item(0);
 
 	//Output the resulting XML.
 	echo $entre;
