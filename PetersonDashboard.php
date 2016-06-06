@@ -3,7 +3,7 @@
 	echo "Pacific Lake <br><br>";
 
     $regex = "";
-    $url = "";	
+    $url = "http://www.pacificlake.com/entrepreneurs";	
 	
 	$file_string = file_get_contents($url);
 	preg_match_all("/".$regex."/", $file_string, $matches, PREG_PATTERN_ORDER);
