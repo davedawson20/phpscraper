@@ -2,7 +2,7 @@
 
 	echo "Pacific Lake <br><br>";
 
-    $regex = "";
+    $regex = '<div class="name">([A-Z.a-z])\w+';
     $url = "http://www.pacificlake.com/entrepreneurs";	
 	
 	$file_string = file_get_contents($url);
