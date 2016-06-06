@@ -2,24 +2,19 @@
 
 	echo '<H1><a href="http://www.pacificlake.com/entrepreneurs">Pacific Lake</a></H1>';
 
-    $regex = '<div class="name">(.+?)<\/div>';
-    $regex2 = '<div class="company">(.+?)<\/div>';
+    $regex = '<div class="name">(.+)<\/div>([\n\r\t]+)(.+)<div class="company">(.+)<\/div>';
     $url = 'http://www.pacificlake.com/entrepreneurs';	
 	
 	$file_string = file_get_contents($url);
 	preg_match_all("/".$regex."/", $file_string, $matches, PREG_PATTERN_ORDER);
-	preg_match_all("/".$regex2."/", $file_string, $matches2, PREG_PATTERN_ORDER);
 	
 	$count = count($matches[0]);
 	echo "Entrepreneurs: ".$count;
-	$count2 = count($matches2[0]);
-	echo " Companies: ".$count2;
 
 	echo "<h2>Entrepreneurs & Companies</h2>\n";
 	for ($i = 0; $i < $count; $i++)
 	{
-		echo $matches[0][$i];
-		echo $matches2[0][$i];
+		echo $matches[1][$i].', '.$matches[4][$i];
 		echo '<br>';
 
 
@@ -32,7 +27,7 @@
 	
 	echo '<H1><a href="http://www.anacapapartners.com/site/global/anacapa/portfolio/index.gsp">Ana Capa Partners</a></H1>';
 	
-    $regex = '<div class="search(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)<img src="(.+)">([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)';
+    $regex = '<div class="search(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)<img src="(.+?)images(.+?)anacapa-img(.+?)portfolio-logos(.+?)(.+)\.(.+?)"(.+)>([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)';
     $url = 'http://www.anacapapartners.com/site/global/anacapa/portfolio/index.gsp';	
 	
 	$file_string = file_get_contents($url);
@@ -45,12 +40,8 @@
 	echo "<br><br>";
 	for ($i = 0; $i < $count; $i++)
 	{
-		echo '<img width="200" src="http://www.anacapapartners.com/'.$matchesAnaCapa[6][$i].'">';
+		echo $matchesAnaCapa[10][$i];
 		echo "<br>";
-		echo $matchesAnaCapa[12][$i];
-		echo "<br>";
-		echo $matchesAnaCapa[16][$i];
-		echo '<br>';
 	}		
 	
 	
