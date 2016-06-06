@@ -1,6 +1,6 @@
 <?php
 
-	echo "<H1>Pacific Lake</H1>";
+	echo '<H1><a href="http://www.pacificlake.com/entrepreneurs">Pacific Lake</a></H1>';
 
     $regex = '<div class="name">(.+?)<\/div>';
     $regex2 = '<div class="company">(.+?)<\/div>';
@@ -30,7 +30,7 @@
 	echo "<br>";
 	echo "<br>";
 	
-	echo "<H1>Ana Capa Partners</H1>";
+	echo '<H1><a href="http://www.anacapapartners.com/site/global/anacapa/portfolio/index.gsp">Ana Capa Partners</a></H1>';
 	
     $regex = '<div class="search(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)<img src="(.+)">([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)([\n\r\t]+)(.+)';
     $url = 'http://www.anacapapartners.com/site/global/anacapa/portfolio/index.gsp';	
@@ -60,7 +60,7 @@
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
-		echo "<H1>Trilogy Equity</H1>";
+		echo '<H1><a href="http://trilogy-search.com/search-funds/">Trilogy Equity</a></H1>';
 		
 		
     $regex = '<div class="fund(.+)href="(.+?)"(.+)alt="(.+)"(.+)\n';
@@ -87,7 +87,7 @@
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
-	echo "<H1>Search Funds .NET</H1>";
+	echo '<H1><a href="http://www.searchfunds.net/approach.html">Search Funds .NET</a></H1>';
 
     $regex = '<a href="(.+)">(.+)<\/a>';
     $url = 'http://www.searchfunds.net/approach.html';	
@@ -112,8 +112,8 @@
 	echo "<br>";
 	echo "<br>";
 	echo "<br>";
-		echo "<H1>Search Funds .ORG</H1>";
-
+		echo '<H1><a href="http://www.searchfund.org/">Search Funds .ORG</a></H1>';
+	
 	echo "Nothing is actually listed on this website";
 	
 
